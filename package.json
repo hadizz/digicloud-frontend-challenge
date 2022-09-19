@@ -25,7 +25,11 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "pretty": "prettier .",
+    "prepare": "husky install",
+    "precommit": "npm run lint-fix && npm run pretty",
+    "prepush": "npm run lint"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +59,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "gh-pages": "^4.0.0",
+    "husky": "^8.0.1",
     "prettier": "^2.7.1"
   }
 }
