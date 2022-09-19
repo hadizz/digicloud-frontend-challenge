@@ -63,6 +63,6 @@
     "prettier": "^2.7.1"
   },
   "hooks": {
-    "pre-commit": "yarn lint"
+    "pre-commit": "npm run lint"
   }
 }
