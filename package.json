@@ -61,5 +61,8 @@
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "prettier": "^2.7.1"
+  },
+  "hooks": {
+    "pre-commit": "yarn lint"
   }
 }
