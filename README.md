@@ -3,11 +3,11 @@
 Simple contact list app
 
 ## Todo List 
-- [ ] Project Set Up
+- [x] Project Set Up
   - [x] Remove extra files
   - [x] Config ci / cd and github pages
-  - [ ] Add typescript
-  - [ ] Add prettier & eslint
+  - [x] Add typescript
+  - [x] Add prettier & eslint
 - [ ] Implement REST API services management service
   - [ ] Choose what package to use
   - [ ] Implement structure for services
