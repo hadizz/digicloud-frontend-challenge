@@ -62,7 +62,9 @@
     "husky": "^8.0.1",
     "prettier": "^2.7.1"
   },
-  "hooks": {
-    "pre-commit": "npm run lint"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }
