@@ -4,7 +4,7 @@ Simple contact list app
 
 ## Todo List 
 - [ ] Project Set Up
-  - [ ] Remove extra files
+  - [x] Remove extra files
   - [x] Config ci / cd and github pages
   - [ ] Add typescript
   - [ ] Add prettier & eslint
