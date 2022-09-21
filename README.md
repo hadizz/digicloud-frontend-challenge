@@ -1,5 +1,3 @@
-[![Github Pages Deploy](https://github.com/hadizz/digicloud-frontend-challenge/actions/workflows/main.yml/badge.svg)](https://github.com/hadizz/digicloud-frontend-challenge/actions/workflows/main.yml)
-
 # DigiCloud Frontend Challenge - Contact List
 
 Simple contact list app
