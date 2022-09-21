@@ -8,9 +8,9 @@ Simple contact list app
   - [x] Config ci / cd and github pages
   - [x] Add typescript
   - [x] Add prettier & eslint
-- [ ] Implement REST API services management service
-  - [ ] Choose what package to use
-  - [ ] Implement structure for services
+- [x] Implement REST API services management service
+  - [x] Choose what package to use
+  - [x] Implement structure for services
 - [ ] Implement UI of contacts list
   - [ ] Create Tab Compoennt
   - [ ] Create Contact detail box component
