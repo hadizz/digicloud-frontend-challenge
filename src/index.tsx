@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.sass';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AppProviders from './Core/Providers/AppProviders';
-import './Resources/css';
+import './Resources/css/index.sass';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,

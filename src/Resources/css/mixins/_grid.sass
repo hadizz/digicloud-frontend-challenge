@@ -36,11 +36,11 @@
       .p#{str-slice($side, 0, 1)}-#{$space}
         padding-#{$side}: #{$space}px
 
-    @each $i in $singleMargin
-      .m#{$space}
+    @each $i in $spaceAmounts
+      .m-#{$space}
         margin: #{$space}px
 
-      .p#{$space}
+      .p-#{$space}
         padding: #{$space}px
 
       .mx-#{$space}

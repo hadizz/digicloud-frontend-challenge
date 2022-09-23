@@ -28,6 +28,9 @@
   ],
   "rules": {
     "import/prefer-default-export": "off",
-    "no-console": "warn"
+    "no-console": "warn",
+    "react/function-component-definition": "off",
+    "import/extensions": "off",
+    "no-restricted-exports": "off"
   }
 }
