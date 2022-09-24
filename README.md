@@ -12,7 +12,8 @@ Simple contact list app
   - [x] Choose what package to use
   - [x] Implement structure for services
 - [ ] Implement UI of contacts list
-  - [ ] Create Tab Compoennt
+  - [x] add SASS support
+  - [x] Create Tabs Component
   - [ ] Create Contact detail box component
   - [ ] Wrap up and connect all components in page
 - [ ] Connect to random api service and show contacts

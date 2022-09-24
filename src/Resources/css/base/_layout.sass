@@ -1,0 +1,219 @@
+@import "../variables"
+@import "../mixin"
+
+// generate col system
++col()
+
+// generate flex system
++flex()
+
+// generate space system
++marginSpace()
+
+.m-auto
+  margin: auto
+
+.no-padding
+  padding: 0 !important
+
+.h100
+  height: 100%
+
+.w100
+  width: 100%
+
+// define flex
+.flexPriority
+  flex: 1
+
+.flex-column
+  flex-direction: column
+
+.flex-row
+  flex-direction: row
+
+.flex-wrap
+  flex-wrap: wrap
+
+.flex-no-wrap
+  flex-wrap: nowrap
+
+.flex-y-center
+  align-items: center
+
+.flex-y-stretch
+  align-items: stretch
+
+.flex-y-end
+  align-items: flex-end
+
+.flex-y-start
+  align-items: flex-start
+
+.flex-x-center
+  justify-content: center
+
+.flex-x-between
+  justify-content: space-between
+
+.flex-x-around
+  justify-content: space-around
+
+.flex-x-end
+  justify-content: flex-end
+
+.flex-x-start
+  justify-content: flex-start
+
+.flex-over-center
+  align-items: center
+  justify-content: center
+
+// define orders for flex
+.order-1
+  order: 1
+
+.order-2
+  order: 2
+
+.order-3
+  order: 3
+
+// displays
+.d-flex
+  display: flex
+
+.d-none
+  display: none
+
+.d-block
+  display: block
+
+.d-inline-block
+  display: inline-block
+
+.d-inline
+  display: inline
+
+.d-inline-flex
+  display: inline-flex
+
+.d-flex-force
+  display: flex !important
+
+.d-block-force
+  display: block !important
+
+.d-inline-block-force
+  display: inline-block !important
+
+.d-inline-force
+  display: inline !important
+
+.d-inline-flex-force
+  display: inline-flex !important
+
+// aligns
+.align-self-start
+  align-self: flex-start
+
+.align-self-center
+  align-self: center
+
+.align-self-end
+  align-self: flex-end
+
+.text-center
+  text-align: center
+
+.text-left
+  text-align: left
+
+.text-justify
+  text-align: justify
+
+// text weight
+.text-bold
+  font-weight: $weightBold !important
+
+.text-medium
+  font-weight: $weightMedium !important
+
+.text-regular
+  font-weight: $weightRegular !important
+
+.text-light
+  font-weight: $weightLight !important
+
+.text-ltr
+  direction: ltr
+  display: inline-block
+
+// font size
+.fontSizeLargest
+  font-size: $fontSizeLargest
+
+.fontSizeLarge
+  font-size: $fontSizeLarge
+
+.fontSizeMedium
+  font-size: $fontSizeMedium
+
+.fontSize18
+  font-size: $fontSize18
+
+.fontSizeExtraMedium
+  font-size: $fontSizeExtraMedium
+
+.fontSizeRegular
+  font-size: $fontSizeRegular
+
+.fontSizeNormal
+  font-size: $fontSizeNormal
+
+.fontSizeSmall
+  font-size: $fontSizeSmall
+
+.fontSizeExtraSmall
+  font-size: $fontSizeExtraSmall
+
+// colors
+.colorWhite
+  color: $colorWhite
+
+.colorRed
+  color: $red !important
+
+.colorBlue
+  color: $blue !important
+
+.colorGreen
+  color: $green !important
+
+.colorYellow
+  color: $yellow !important
+
+.colorGray
+  color: $gray !important
+
+.colorGray100
+  color: $gray-100 !important
+
+.colorGray200
+  color: $gray-200 !important
+
+.colorGray300
+  color: $gray-300 !important
+
+.colorGray400
+  color: $gray-400 !important
+
+.colorGray500
+  color: $gray-500 !important
+
+// cursor
+.cursor-pointer
+  cursor: pointer
+
+.no-scroll
+  overflow: hidden !important

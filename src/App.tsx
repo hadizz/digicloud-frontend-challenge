@@ -1,7 +1,8 @@
 import React from 'react';
+import ContactsList from './Views/Containers/ContactsList';
 
 function App() {
-  return <div>test http service</div>;
+  return <ContactsList />;
 }
 
 export default App;

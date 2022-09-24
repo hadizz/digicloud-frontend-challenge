@@ -1,0 +1,27 @@
+@import "../variables"
+@import "../mixins/media-query"
+
+html
+  direction: $directionBase
+  //font-family: $fontFamilyBase, sans-serif
+  font-weight: $weightRegular
+  font-size: $baseFontSize
+  color: $gray
+  overflow-x: hidden
+
+body
+  background: $colorWhite
+  //noinspection CssInvalidPropertyValue
+  min-height: -webkit-fill-available
+  +breakpoint(mobileTablet)
+    padding-left: 0
+    min-height: 100vh
+    background: $gray-400
+    overflow-x: hidden
+
+.digiCloudApp
+  +breakpoint(mobileTablet)
+    height: 100vh
+    overflow-y: auto
+    transition: $transitionBase
+

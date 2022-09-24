@@ -1,0 +1,19 @@
+@import "src/Resources/css/requirements"
+
+.root
+  border: 1px solid transparent
+  border-top-right-radius: $spaceSmall
+  border-top-left-radius: $spaceSmall
+  display: inline-block
+  padding: 0.5rem 0.75rem
+
+  &.variant
+
+    &-default
+      border-color: $gray-700
+      background: $gray-600
+      &.active
+        border-bottom-color: $gray-600
+        box-shadow: inset 0 4px 3px 0 #b6b6b66e
+
+// other themes can be provided here, note that should handle active in each theme for color variants...
