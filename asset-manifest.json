@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/digicloud-frontend-challenge/static/css/main.4963aca4.css",
-    "main.js": "/digicloud-frontend-challenge/static/js/main.cd4e50bb.js",
+    "main.css": "/digicloud-frontend-challenge/static/css/main.fafd056b.css",
+    "main.js": "/digicloud-frontend-challenge/static/js/main.c87bf5de.js",
     "static/js/787.86e54419.chunk.js": "/digicloud-frontend-challenge/static/js/787.86e54419.chunk.js",
     "index.html": "/digicloud-frontend-challenge/index.html",
-    "main.4963aca4.css.map": "/digicloud-frontend-challenge/static/css/main.4963aca4.css.map",
-    "main.cd4e50bb.js.map": "/digicloud-frontend-challenge/static/js/main.cd4e50bb.js.map",
+    "main.fafd056b.css.map": "/digicloud-frontend-challenge/static/css/main.fafd056b.css.map",
+    "main.c87bf5de.js.map": "/digicloud-frontend-challenge/static/js/main.c87bf5de.js.map",
     "787.86e54419.chunk.js.map": "/digicloud-frontend-challenge/static/js/787.86e54419.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4963aca4.css",
-    "static/js/main.cd4e50bb.js"
+    "static/css/main.fafd056b.css",
+    "static/js/main.c87bf5de.js"
   ]
 }
