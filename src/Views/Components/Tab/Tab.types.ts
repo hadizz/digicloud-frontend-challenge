@@ -11,6 +11,7 @@ export interface ITabData {
   active?: boolean;
   label: string;
   value: TTabValue; // todo: use Pick?
+  disable?: boolean;
   index?: number;
 }
 

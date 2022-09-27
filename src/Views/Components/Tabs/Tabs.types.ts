@@ -9,5 +9,6 @@ export interface ITabsProps {
     index: number,
     event: React.MouseEvent<TTabHTMLElementType>,
   ) => void;
+  loading: boolean;
   children: (currentTab: TTabValue, tab: ITabData) => React.ReactNode;
 }

@@ -4,12 +4,13 @@ import randomApiService from '../../../Services/RandomApiSerivce';
 import useIsMounted from '../../../Hooks/useIsMounted';
 import provideContactsListData from './Helpers/provideContactsListData';
 import Tabs from '../../Components/Tabs';
+import { IContactsListData } from './ContactsList.types';
 
 const ContactsList = () => {
-  const [contacts, setContacts] = useState<ITabData[]>([]);
+  const [contacts, setContacts] = useState<IContactsListData[]>([]);
   const [activeTab, setActiveTab] = useState<string>('a');
 
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const isMounted = useIsMounted();
 
   const handleOnChangeTabs = (tab: ITabData, index: number) => {
@@ -39,11 +40,14 @@ const ContactsList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (isLoading) return <span>loading</span>;
-
   return (
     <div className="m-4">
-      <Tabs activeTab={activeTab} data={contacts} onChange={handleOnChangeTabs}>
+      <Tabs
+        loading={isLoading}
+        data={contacts}
+        activeTab={activeTab}
+        onChange={handleOnChangeTabs}
+      >
         {(currentTab, tab: any) => {
           return (
             <div>

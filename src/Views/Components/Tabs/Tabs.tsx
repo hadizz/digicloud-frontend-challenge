@@ -9,6 +9,7 @@ const Tabs: React.FC<ITabsProps> = ({
   activeTab,
   data,
   onChange,
+  loading,
   children,
 }) => {
   // states
@@ -38,31 +39,39 @@ const Tabs: React.FC<ITabsProps> = ({
     onChange?.(tab, index, event);
   };
 
-  // renders
-  if (!isArraySecure(data)) {
-    return <span>no data tot show // todo</span>;
-  }
-
   // todo: index is not secure for key prop. should use some unique value from array instead \
   //  resolve eslint-disable-next-line react/no-array-index-key please
   return (
-    <ul className={classes.root}>
-      {tabs.map((tab, index) => (
-        <Tab
-          label={tab.label}
-          value={tab.value}
-          active={currentTab === tab.value || tab.active}
-          // eslint-disable-next-line react/no-array-index-key
-          key={tab.index ?? index}
-          onClick={(event, selectedTab) =>
-            handleOnChange(event, selectedTab, index)
-          }
-        />
-      ))}
+    <div className={classes.root}>
+      <ul>
+        {!isArraySecure(tabs) ? (
+          <Tab label="" value="" disable />
+        ) : (
+          tabs.map((tab, index) => (
+            <Tab
+              label={tab.label}
+              value={tab.value}
+              active={currentTab === tab.value || tab.active}
+              disable={loading}
+              // eslint-disable-next-line react/no-array-index-key
+              key={tab.index ?? index}
+              onClick={(event, selectedTab) =>
+                handleOnChange(event, selectedTab, index)
+              }
+            />
+          ))
+        )}
+      </ul>
       <section className={classes.content}>
-        {children(currentTab, findTabByValue(currentTab) as ITabData)}
+        {loading ? (
+          <div className="d-flex flex-x-center w100 my-16">
+            <div className="loaderBase" />
+          </div>
+        ) : (
+          children(currentTab, findTabByValue(currentTab) as ITabData)
+        )}
       </section>
-    </ul>
+    </div>
   );
 };
 

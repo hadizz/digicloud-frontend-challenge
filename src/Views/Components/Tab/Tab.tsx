@@ -1,5 +1,5 @@
 import React from 'react';
-import { TTabHTMLElementType, ITabProps } from './Tab.types';
+import { ITabProps, TTabHTMLElementType } from './Tab.types';
 import generateClassName from '../../../Helpers/Dom/generateClassName';
 import classes from './Tab.module.sass';
 
@@ -8,13 +8,14 @@ const Tab: React.FC<ITabProps> = ({
   onClick,
   label,
   value,
+  disable,
   index,
   variant = 'default',
   tabIndex,
   onKeyUp,
 }) => {
   const handleOnClick = (event: React.MouseEvent<TTabHTMLElementType>) => {
-    onClick?.(event, { label, value, active, index });
+    if (!disable && onClick) onClick(event, { label, value, active, index });
   };
 
   return (
@@ -23,7 +24,8 @@ const Tab: React.FC<ITabProps> = ({
         classes.root,
         active && classes.active,
         classes?.[`variant-${variant}`],
-        'cursor-pointer',
+        disable && classes.disable,
+        disable ? 'cursor-not-allowed' : 'cursor-pointer',
       ])}
       onClick={handleOnClick}
       role="tab"
@@ -32,7 +34,7 @@ const Tab: React.FC<ITabProps> = ({
       data-value={value}
       key={index}
     >
-      {label}
+      <span className={classes.label}>{label}</span>
     </li>
   );
 };
