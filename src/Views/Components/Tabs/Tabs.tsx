@@ -52,7 +52,7 @@ const Tabs: React.FC<ITabsProps> = ({
               label={tab.label}
               value={tab.value}
               active={currentTab === tab.value || tab.active}
-              disable={loading}
+              disable={loading || tab.disable}
               // eslint-disable-next-line react/no-array-index-key
               key={tab.index ?? index}
               onClick={(event, selectedTab) =>

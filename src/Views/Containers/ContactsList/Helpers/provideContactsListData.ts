@@ -1,5 +1,6 @@
 import { IUser } from '../../../../Models/Entity/IUser';
 import isArraySecure from '../../../../Helpers/Object/isArraySecure';
+import ENGLISH_ALPHABET from '../../../../Constants/Language/EnglishAlphabet';
 
 export interface IReturnProvideContactsListData {
   label: string;
@@ -13,16 +14,16 @@ const provideContactsListData = (
 ): IReturnProvideContactsListData[] => {
   if (!isArraySecure(data)) return [];
 
-  const familyLetter = (user: IUser) => user.name.last[0].toLowerCase();
+  const familyFirstLetter = (user: IUser) => user.name.last[0].toLowerCase();
 
-  const groups: Record<string, Partial<IUser>[]> = {};
+  const groups: Record<string, Partial<IUser>[]> = Object.fromEntries(
+    ENGLISH_ALPHABET.map((alp) => [alp, []]),
+  );
 
   data.forEach((user) => {
-    if (groups?.[familyLetter(user)]) {
-      const users = groups[familyLetter(user)];
-      groups[familyLetter(user)] = [...users, user];
-    } else {
-      groups[familyLetter(user)] = [user];
+    if (groups?.[familyFirstLetter(user)]) {
+      const users = groups[familyFirstLetter(user)];
+      groups[familyFirstLetter(user)] = [...users, user];
     }
   });
 
@@ -32,6 +33,7 @@ const provideContactsListData = (
       value: key,
       count: value.length,
       users: value,
+      disable: value.length === 0,
     }))
     .sort((a, b) =>
       a.value.localeCompare(b.value),
