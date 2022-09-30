@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/digicloud-frontend-challenge/static/css/main.a745d3fa.css",
-    "main.js": "/digicloud-frontend-challenge/static/js/main.aeec7088.js",
+    "main.js": "/digicloud-frontend-challenge/static/js/main.51eea3f5.js",
     "static/js/787.86e54419.chunk.js": "/digicloud-frontend-challenge/static/js/787.86e54419.chunk.js",
     "index.html": "/digicloud-frontend-challenge/index.html",
     "main.a745d3fa.css.map": "/digicloud-frontend-challenge/static/css/main.a745d3fa.css.map",
-    "main.aeec7088.js.map": "/digicloud-frontend-challenge/static/js/main.aeec7088.js.map",
+    "main.51eea3f5.js.map": "/digicloud-frontend-challenge/static/js/main.51eea3f5.js.map",
     "787.86e54419.chunk.js.map": "/digicloud-frontend-challenge/static/js/787.86e54419.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a745d3fa.css",
-    "static/js/main.aeec7088.js"
+    "static/js/main.51eea3f5.js"
   ]
 }
