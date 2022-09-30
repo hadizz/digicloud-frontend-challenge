@@ -2,6 +2,13 @@ import React from 'react';
 import { ITabProps, TTabHTMLElementType } from './Tab.types';
 import generateClassName from '../../../Helpers/Dom/generateClassName';
 import classes from './Tab.module.sass';
+import generateTestId from '../../../Helpers/Dom/generateTestId';
+import {
+  TAB_ARIA_LABEL,
+  TAB_BADGE_ARIA_LABEL,
+  TAB_BADGE_TESTID,
+  TAB_TESTID,
+} from './Tab.constants';
 
 const Tab: React.FC<ITabProps> = ({
   active,
@@ -20,7 +27,7 @@ const Tab: React.FC<ITabProps> = ({
   };
 
   return (
-    <li
+    <div
       className={generateClassName([
         classes.root,
         active && classes.active,
@@ -30,16 +37,24 @@ const Tab: React.FC<ITabProps> = ({
       ])}
       onClick={handleOnClick}
       role="tab"
+      aria-label={`${TAB_ARIA_LABEL}${label}`}
       onKeyUp={onKeyUp}
       tabIndex={tabIndex}
       data-value={value}
       key={index}
+      {...generateTestId(`${TAB_TESTID}${value}`)}
     >
       <span className={classes.label}>{label}</span>
       {(badge !== undefined || badge !== null) && (
-        <div className={classes.badge}>{badge}</div>
+        <div
+          className={classes.badge}
+          {...generateTestId(`${TAB_BADGE_TESTID}${badge}`)}
+          aria-label={`${TAB_BADGE_ARIA_LABEL}${badge}`}
+        >
+          {badge}
+        </div>
       )}
-    </li>
+    </div>
   );
 };
 

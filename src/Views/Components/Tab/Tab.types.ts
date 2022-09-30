@@ -3,7 +3,7 @@ import React from 'react';
 // you can add your design system tab styles here and define variants.
 export type TTabVariants = 'default';
 
-export type TTabHTMLElementType = HTMLLIElement;
+export type TTabHTMLElementType = HTMLDivElement;
 
 export type TTabValue = string;
 
