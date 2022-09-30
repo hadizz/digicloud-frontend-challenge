@@ -1,6 +1,6 @@
 # DigiCloud Frontend Challenge - Contact List
 
-This is my answer to a DigiCloud interview assessment
+This is my answer to DigiCloud interview assessment
 
 <img src='./Screen Shot.png' />
 
