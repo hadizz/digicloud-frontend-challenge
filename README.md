@@ -2,7 +2,7 @@
 
 This is my answer to a DigiCloud interview assessment
 
-![Screen Shot](Screen Shot.png)
+<img src='./Screen Shot.png' />
 
 ## Objective
 a simple contacts list web app that connects to [random user service](https://randomuser.me/).
