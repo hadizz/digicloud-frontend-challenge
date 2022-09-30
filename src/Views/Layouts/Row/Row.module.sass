@@ -1,0 +1,24 @@
+@import "../../../Resources/css/requirements"
+
+.row
+  display: flex
+  flex: 0 1 auto
+  flex-direction: row
+  flex-wrap: wrap
+  margin-right: -$spaceSmall
+  margin-left: -$spaceSmall
+
+  &.reverse
+    flex-direction: row-reverse
+
+  &.column
+    flex-direction: column
+
+  &.column-reverse
+    flex-direction: column-reverse
+
+  // col in row
+  > [class^=col-],
+  > [class*=col-]
+    padding-right: $spaceSmall
+    padding-left: $spaceSmall

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { ITabData } from '../../Components/Tab';
-import randomApiService from '../../../Services/RandomApiSerivce';
 import useIsMounted from '../../../Hooks/useIsMounted';
 import provideContactsListData from './Helpers/provideContactsListData';
 import Tabs from '../../Components/Tabs';
 import { IContactsListData } from './ContactsList.types';
 import { ContactsListInitialState } from './Constants';
+import Contact from './Components/Contact';
+import classes from './ContractsList.module.sass';
+import randomApiService from '../../../Services/RandomApiSerivce';
 
 const ContactsList = () => {
   const [contacts, setContacts] = useState<IContactsListData[]>(
@@ -26,7 +28,7 @@ const ContactsList = () => {
   const getContactsListData = async () => {
     try {
       const contactsResponse = await randomApiService.getUsersList({
-        results: 10,
+        results: 150,
       });
       if (!isMounted) return;
       const contactsResults = contactsResponse.data.results;
@@ -44,22 +46,22 @@ const ContactsList = () => {
   }, []);
 
   return (
-    <div className="m-4">
+    <div className={classes.root}>
       <Tabs
         loading={isLoading}
         data={contacts}
         activeTab={activeTab}
         onChange={handleOnChangeTabs}
       >
-        {(currentTab, tab: any) => {
+        {(currentTab, tab) => {
           return (
-            <div>
-              {tab?.users?.map((user: any) => (
-                <div>
-                  {user.name.first} {user.name.last}
-                </div>
+            <ul className={classes.contacts}>
+              {tab?.users?.map((contact, key) => (
+                <li>
+                  <Contact key={key} contact={contact} />
+                </li>
               ))}
-            </div>
+            </ul>
           );
         }}
       </Tabs>

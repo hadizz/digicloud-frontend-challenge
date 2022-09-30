@@ -5,15 +5,15 @@ import Tab, { ITabData, TTabValue } from '../Tab';
 import classes from './Tabs.module.sass';
 import deepClone from '../../../Helpers/Object/deepClone';
 
-const Tabs: React.FC<ITabsProps> = ({
+function Tabs<T extends ITabData>({
   activeTab,
   data,
   onChange,
   loading,
   children,
-}) => {
+}: ITabsProps<T>) {
   // states
-  const [tabs, setTabs] = useState<ITabData[]>([]);
+  const [tabs, setTabs] = useState<T[]>([]);
   const [currentTab, setCurrentTab] = useState<TTabValue>('');
 
   const findTabByValue = useCallback(
@@ -33,7 +33,7 @@ const Tabs: React.FC<ITabsProps> = ({
   // handles
   const handleOnChange = (
     event: React.MouseEvent<HTMLLIElement>,
-    tab: ITabData,
+    tab: T,
     index: number,
   ) => {
     onChange?.(tab, index, event);
@@ -56,7 +56,7 @@ const Tabs: React.FC<ITabsProps> = ({
               // eslint-disable-next-line react/no-array-index-key
               key={tab.index ?? index}
               onClick={(event, selectedTab) =>
-                handleOnChange(event, selectedTab, index)
+                handleOnChange(event, selectedTab as T, index)
               }
             />
           ))
@@ -68,11 +68,11 @@ const Tabs: React.FC<ITabsProps> = ({
             <div className="loaderBase" />
           </div>
         ) : (
-          children(currentTab, findTabByValue(currentTab) as ITabData)
+          children(currentTab, findTabByValue(currentTab) as T)
         )}
       </section>
     </div>
   );
-};
+}
 
 export default Tabs;

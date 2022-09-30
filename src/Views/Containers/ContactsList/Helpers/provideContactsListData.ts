@@ -1,17 +1,9 @@
 import { IUser } from '../../../../Models/Entity/IUser';
 import isArraySecure from '../../../../Helpers/Object/isArraySecure';
 import ENGLISH_ALPHABET from '../../../../Constants/Language/EnglishAlphabet';
+import { IContactsListData } from '../ContactsList.types';
 
-export interface IReturnProvideContactsListData {
-  label: string;
-  value: string;
-  count: number;
-  users: IUser[];
-}
-
-const provideContactsListData = (
-  data: IUser[],
-): IReturnProvideContactsListData[] => {
+const provideContactsListData = (data: IUser[]): IContactsListData[] => {
   if (!isArraySecure(data)) return [];
 
   const familyFirstLetter = (user: IUser) => user.name.last[0].toLowerCase();
@@ -35,9 +27,7 @@ const provideContactsListData = (
       users: value,
       disable: value.length === 0,
     }))
-    .sort((a, b) =>
-      a.value.localeCompare(b.value),
-    ) as IReturnProvideContactsListData[];
+    .sort((a, b) => a.value.localeCompare(b.value));
 };
 
 export default provideContactsListData;
