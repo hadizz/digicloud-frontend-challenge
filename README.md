@@ -16,6 +16,6 @@ Simple contact list app
   - [x] Create Tabs Component
   - [x] Create Contact detail box component
   - [x] Wrap up and connect all components in page
-- [ ] Connect to random api service and show contacts
+- [x] Connect to random api service and show contacts
 - [ ] Writing tests
-- [ ] Responsive application
+- [x] Responsive application
