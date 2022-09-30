@@ -1,6 +1,35 @@
 # DigiCloud Frontend Challenge - Contact List
 
-Simple contact list app
+This is my answer to a DigiCloud interview assessment
+
+![Screen Shot](Screen Shot.png)
+
+## Objective
+a simple contacts list web app that connects to [random user service](https://randomuser.me/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run start
+```
+
+### Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Run Unit Tests with React Testing Library
+
+```sh
+npm run test
+```
 
 ## Todo List 
 - [x] Project Set Up
