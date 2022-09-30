@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { ITabsProps } from './Tabs.types';
-import isArraySecure from '../../../Helpers/Object/isArraySecure';
+import isArraySecure from '../../../Helpers/Object/Array/isArraySecure';
 import Tab, { ITabData, TTabValue } from '../Tab';
 import classes from './Tabs.module.sass';
 import deepClone from '../../../Helpers/Object/deepClone/deepClone';
