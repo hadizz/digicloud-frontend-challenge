@@ -1,0 +1,28 @@
+@import "src/Resources/css/requirements"
+
+.root
+  margin: $spaceSmallest
+
+  .contacts
+    min-height: 410px
+
+    li
+      width: 45%
+      float: left
+      &::after
+        content: ''
+        display: table
+        clear: both
+
+      padding: $spaceSmall
+      margin: 0 $spaceMedium
+      border-bottom: 1px dotted $gray-700
+
+      &:last-of-type
+        border-bottom: none
+
+      +breakpoint(mobileTablet)
+        width: initial
+        float: initial
+        &::after
+          all: unset

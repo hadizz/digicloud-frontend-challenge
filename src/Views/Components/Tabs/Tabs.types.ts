@@ -1,13 +1,14 @@
 import React from 'react';
-import { ITabData, TTabHTMLElementType, TTabValue } from '../Tab';
+import { TTabHTMLElementType, TTabValue } from '../Tab';
 
-export interface ITabsProps {
+export interface ITabsProps<T> {
   activeTab: TTabValue;
-  data: ITabData[];
+  data: T[];
   onChange?: (
-    tab: ITabData,
+    tab: T,
     index: number,
     event: React.MouseEvent<TTabHTMLElementType>,
   ) => void;
-  children: (currentTab: TTabValue, tab: ITabData) => React.ReactNode;
+  loading: boolean;
+  children: (currentTab: TTabValue, tab: T) => JSX.Element;
 }

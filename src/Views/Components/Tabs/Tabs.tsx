@@ -5,14 +5,15 @@ import Tab, { ITabData, TTabValue } from '../Tab';
 import classes from './Tabs.module.sass';
 import deepClone from '../../../Helpers/Object/deepClone';
 
-const Tabs: React.FC<ITabsProps> = ({
+function Tabs<T extends ITabData>({
   activeTab,
   data,
   onChange,
+  loading,
   children,
-}) => {
+}: ITabsProps<T>) {
   // states
-  const [tabs, setTabs] = useState<ITabData[]>([]);
+  const [tabs, setTabs] = useState<T[]>([]);
   const [currentTab, setCurrentTab] = useState<TTabValue>('');
 
   const findTabByValue = useCallback(
@@ -32,38 +33,47 @@ const Tabs: React.FC<ITabsProps> = ({
   // handles
   const handleOnChange = (
     event: React.MouseEvent<HTMLLIElement>,
-    tab: ITabData,
+    tab: T,
     index: number,
   ) => {
     onChange?.(tab, index, event);
   };
 
-  // renders
-  if (!isArraySecure(data)) {
-    return <span>no data tot show // todo</span>;
-  }
-
   // todo: index is not secure for key prop. should use some unique value from array instead \
   //  resolve eslint-disable-next-line react/no-array-index-key please
   return (
-    <ul className={classes.root}>
-      {tabs.map((tab, index) => (
-        <Tab
-          label={tab.label}
-          value={tab.value}
-          active={currentTab === tab.value || tab.active}
-          // eslint-disable-next-line react/no-array-index-key
-          key={tab.index ?? index}
-          onClick={(event, selectedTab) =>
-            handleOnChange(event, selectedTab, index)
-          }
-        />
-      ))}
+    <div className={classes.root}>
+      <ul>
+        {!isArraySecure(tabs) ? (
+          <Tab label="" value="" disable badge="" />
+        ) : (
+          tabs.map((tab, index) => (
+            <Tab
+              label={tab.label}
+              value={tab.value}
+              badge={tab.badge}
+              active={currentTab === tab.value || tab.active}
+              disable={loading || tab.disable}
+              // eslint-disable-next-line react/no-array-index-key
+              key={tab.index ?? index}
+              onClick={(event, selectedTab) =>
+                handleOnChange(event, selectedTab as T, index)
+              }
+            />
+          ))
+        )}
+      </ul>
       <section className={classes.content}>
-        {children(currentTab, findTabByValue(currentTab) as ITabData)}
+        {loading ? (
+          <div className="d-flex flex-x-center w100 my-16">
+            <div className="loaderBase" />
+          </div>
+        ) : (
+          children(currentTab, findTabByValue(currentTab) as T)
+        )}
       </section>
-    </ul>
+    </div>
   );
-};
+}
 
 export default Tabs;

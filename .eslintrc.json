@@ -31,6 +31,10 @@
     "no-console": "warn",
     "react/function-component-definition": "off",
     "import/extensions": "off",
-    "no-restricted-exports": "off"
+    "no-restricted-exports": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/no-array-index-key": "off",
+    "jsx-a11y/interactive-supports-focus": "off",
+    "jsx-a11y/click-events-have-key-events": "off"
   }
 }

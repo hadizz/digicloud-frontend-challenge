@@ -11,11 +11,11 @@ Simple contact list app
 - [x] Implement REST API services management service
   - [x] Choose what package to use
   - [x] Implement structure for services
-- [ ] Implement UI of contacts list
+- [x] Implement UI of contacts list
   - [x] add SASS support
   - [x] Create Tabs Component
-  - [ ] Create Contact detail box component
-  - [ ] Wrap up and connect all components in page
-- [ ] Connect to random api service and show contacts
+  - [x] Create Contact detail box component
+  - [x] Wrap up and connect all components in page
+- [x] Connect to random api service and show contacts
 - [ ] Writing tests
-- [ ] Responsive application
+- [x] Responsive application

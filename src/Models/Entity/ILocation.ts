@@ -6,7 +6,7 @@ export interface ILocation {
   city: string;
   state: string;
   country: string;
-  postcode: number;
+  postcode: number | string;
   coordinates: {
     latitude: string;
     longitude: string;

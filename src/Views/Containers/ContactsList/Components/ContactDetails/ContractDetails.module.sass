@@ -1,0 +1,59 @@
+@import "src/Resources/css/requirements"
+
+.root
+  position: relative
+  border: 1px solid $gray-700
+  box-shadow: inset 0 5px 9px rgba(0, 0, 0, 0.1), inset 0px -4px 0px rgba(0, 0, 0, 0.02), inset 0px -10px 15px -7px rgba(0, 0, 0, 0.3)
+  padding: $spaceMedium $spaceSmall $spaceLargest $spaceSmall
+  border-radius: $borderRadiusSmall
+  background: $gray-600
+  z-index: 100
+
+  .ribbon
+    position: absolute
+    background-image: linear-gradient(135deg, #ff8732 0%, #e32323 50%, #ff3232 100%)
+    color: white
+    padding: $spaceSmallest $spaceSmall
+    top: 10px
+    right: 10px
+    transform: translate(38%, 250%) rotate(90deg)
+    border-radius: 2px
+    box-shadow: $boxShadowBase
+
+  .row
+    .image
+      position: relative
+      display: flex
+      justify-content: center
+
+      img
+        margin-top: $spaceSmall
+        border-radius: 100%
+        box-shadow: 2px 4px 5px 0 rgba(0, 0, 0, 0.3)
+        width: 100px
+        height: 100px
+
+      .closeButton
+        position: absolute
+        left: $spaceSmall
+        top: $spaceSmall
+        cursor: pointer
+
+    .info
+      .heading
+        color: $gray-300
+        font-size: $fontSizeExtraMedium
+        margin-bottom: $spaceMedium
+
+        +breakpoint(smallDesktop)
+          margin-top: $spaceMedium
+          text-align: center
+
+      .list
+
+        div
+          margin: 2px 0
+
+        +breakpoint(smallDesktop)
+          padding: $spaceMedium
+
