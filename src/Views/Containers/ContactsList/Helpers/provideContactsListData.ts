@@ -21,9 +21,9 @@ const provideContactsListData = (data: IUser[]): IContactsListData[] => {
 
   return Object.entries(groups)
     .map(([key, value]) => ({
-      label: `${key} (${value.length})`,
+      label: key,
       value: key,
-      count: value.length,
+      badge: value.length,
       users: value,
       disable: value.length === 0,
     }))

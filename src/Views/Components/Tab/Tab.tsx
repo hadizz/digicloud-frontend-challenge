@@ -8,6 +8,7 @@ const Tab: React.FC<ITabProps> = ({
   onClick,
   label,
   value,
+  badge,
   disable,
   index,
   variant = 'default',
@@ -35,6 +36,9 @@ const Tab: React.FC<ITabProps> = ({
       key={index}
     >
       <span className={classes.label}>{label}</span>
+      {(badge !== undefined || badge !== null) && (
+        <div className={classes.badge}>{badge}</div>
+      )}
     </li>
   );
 };

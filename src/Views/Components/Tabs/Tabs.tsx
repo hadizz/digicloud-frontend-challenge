@@ -45,12 +45,13 @@ function Tabs<T extends ITabData>({
     <div className={classes.root}>
       <ul>
         {!isArraySecure(tabs) ? (
-          <Tab label="" value="" disable />
+          <Tab label="" value="" disable badge="" />
         ) : (
           tabs.map((tab, index) => (
             <Tab
               label={tab.label}
               value={tab.value}
+              badge={tab.badge}
               active={currentTab === tab.value || tab.active}
               disable={loading || tab.disable}
               // eslint-disable-next-line react/no-array-index-key
