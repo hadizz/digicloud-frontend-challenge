@@ -1,5 +1,5 @@
 import { IUser } from '../../../../Models/Entity/IUser';
-import isArraySecure from '../../../../Helpers/Object/isArraySecure';
+import isArraySecure from '../../../../Helpers/Object/Array/isArraySecure';
 import ENGLISH_ALPHABET from '../../../../Constants/Language/EnglishAlphabet';
 import { IContactsListData } from '../ContactsList.types';
 
