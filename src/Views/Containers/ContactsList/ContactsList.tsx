@@ -8,6 +8,7 @@ import { ContactsListInitialState } from './Constants';
 import Contact from './Components/Contact';
 import classes from './ContractsList.module.sass';
 import randomApiService from '../../../Services/RandomApiSerivce';
+import UsersContextProvider from '../../../Core/Context/Users';
 
 const ContactsList = () => {
   const [contacts, setContacts] = useState<IContactsListData[]>(
@@ -55,13 +56,15 @@ const ContactsList = () => {
       >
         {(currentTab, tab) => {
           return (
-            <ul className={classes.contacts}>
-              {tab?.users?.map((contact, key) => (
-                <li>
-                  <Contact key={key} contact={contact} />
-                </li>
-              ))}
-            </ul>
+            <UsersContextProvider>
+              <ul className={classes.contacts}>
+                {tab?.users?.map((contact, key) => (
+                  <li>
+                    <Contact key={key} contact={contact} />
+                  </li>
+                ))}
+              </ul>
+            </UsersContextProvider>
           );
         }}
       </Tabs>
