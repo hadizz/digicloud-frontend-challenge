@@ -6,15 +6,15 @@ import { UsersContext } from '../../../../../Core/Context/Users';
 
 const Contact = ({ key, contact }: IContactProps) => {
   const [showDetails, setShowDetails] = useState(false);
-  const { openedUserModal, setOpenedUserModal } = useContext(UsersContext);
+  const { currentUsername, setCurrentUsername } = useContext(UsersContext);
 
   useEffect(() => {
-    setShowDetails(openedUserModal === contact.login?.username);
-  }, [openedUserModal, setOpenedUserModal, contact.login?.username]);
+    setShowDetails(currentUsername === contact.login?.username);
+  }, [currentUsername, setCurrentUsername, contact.login?.username]);
 
   const handleOnClick = () => {
     setShowDetails(true);
-    setOpenedUserModal(contact.login?.username);
+    setCurrentUsername(contact.login?.username);
   };
 
   const handleOnCloseDetails = (event: React.MouseEvent<HTMLDivElement>) => {

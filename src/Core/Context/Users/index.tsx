@@ -1,13 +1,13 @@
 import React, { createContext, useMemo, useState } from 'react';
 
 interface UsersContextInterface {
-  openedUserModal: string;
-  setOpenedUserModal: Function;
+  currentUsername: string;
+  setCurrentUsername: Function;
 }
 
 const initialUsersContext: UsersContextInterface = {
-  openedUserModal: '',
-  setOpenedUserModal: () => {},
+  currentUsername: '',
+  setCurrentUsername: () => {},
 };
 
 export const UsersContext = createContext<UsersContextInterface>(
@@ -19,11 +19,11 @@ interface UsersContextProviderProps {
 }
 
 const UsersContextProvider = ({ children }: UsersContextProviderProps) => {
-  const [openedUserModal, setOpenedUserModal] = useState<string>('');
+  const [currentUsername, setCurrentUsername] = useState<string>('');
 
   const state = useMemo<UsersContextInterface>(
-    () => ({ openedUserModal, setOpenedUserModal }),
-    [openedUserModal, setOpenedUserModal],
+    () => ({ currentUsername, setCurrentUsername }),
+    [currentUsername, setCurrentUsername],
   );
 
   return (
