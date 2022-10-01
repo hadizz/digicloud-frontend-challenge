@@ -20,6 +20,7 @@ const Contact = ({ key, contact }: IContactProps) => {
   const handleOnCloseDetails = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
     setShowDetails(false);
+    setCurrentUsername('');
   };
 
   return (
